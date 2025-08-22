@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1><i class="fas fa-qrcode"></i> Gerador de QR Code</h1>
+                <p>Converta qualquer link em um QR Code</p>
+            </div>
+            <div class="content">
+                <div class="input-group">
+                    <label for="urlInput"><i class="fas fa-link"></i> Digite a URL:</label>
+                    <input type="url" id="urlInput" placeholder="https://exemplo.com" required>
+                </div>
+                
+                <button class="btn" id="generateBtn">
+                    <i class="fas fa-bolt"></i> Gerar QR Code
+                </button>
+                
+                <div id="qrcode" class="hidden">
+                    <div class="loader"></div>
+                </div>
+                
+                <div id="errorMsg" class="message error hidden">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span></span>
+                </div>
+                
+                <div id="successMsg" class="message success hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <span></span>
+                </div>
+                
+                <div class="actions hidden" id="actionButtons">
+                    <button class="btn btn-success" id="downloadBtn">
+                        <i class="fas fa-download"></i> Baixar QR Code
+                    </button>
+                    <button class="btn btn-accent" id="shareBtn">
+                        <i class="fas fa-share-alt"></i> Compartilhar
+                    </button>
+                </div>
+                
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> Como usar:</h3>
+                    <ol>
+                        <li>Digite a URL no campo acima</li>
+                        <li>Clique em "Gerar QR Code"</li>
+                        <li>Faça o download ou compartilhe</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="header">
+                <h1><i class="fas fa-mobile-alt"></i> Como escanear</h1>
+                <p>Use a câmera do seu celular</p>
+            </div>
+            <div class="content">
+                <div style="text-align: center; margin: 20px 0;">
+                    <i class="fas fa-camera" style="font-size: 60px; color: var(--primary);"></i>
+                </div>
+                
+                <h3>Para iOS (iPhone):</h3>
+                <ol>
+                    <li>Abra o aplicativo da Câmera</li>
+                    <li>Aponte para o código QR</li>
+                    <li>Toque na notificação que aparecer</li>
+                </ol>
+                
+                <h3>Para Android:</h3>
+                <ol>
+                    <li>Abra o aplicativo da Câmera</li>
+                    <li>Aponte para o código QR</li>
+                    <li>Toque na notificação que aparecer</li>
+                </ol>
+                
+                <h3>Apps alternativos:</h3>
+                <ul>
+                    <li>QR Scanner for iPhone</li>
+                    <li>QR Code Reader for Android</li>
+                    <li>Google Lens</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Gerador de QR Code &copy; </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

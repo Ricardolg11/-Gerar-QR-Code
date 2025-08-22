@@ -1,4 +1,3 @@
-    // Variáveis globais
         let qrCodeDataURL = null;
         const elements = {
             urlInput: document.getElementById('urlInput'),
@@ -13,7 +12,6 @@
 
         // Inicialização
         document.addEventListener('DOMContentLoaded', function() {
-            // Focar no input ao carregar a página
             elements.urlInput.focus();
             
             // Adicionar event listeners
@@ -32,14 +30,10 @@
                 }
             });
             
-            // Download do QR Code
             elements.downloadBtn.addEventListener('click', downloadQRCode);
-            
-            // Compartilhar QR Code
             elements.shareBtn.addEventListener('click', shareQRCode);
         }
 
-        // Função para validar URL
         function isValidURL(url) {
             try {
                 new URL(url);
@@ -49,7 +43,6 @@
             }
         }
 
-        // Função para gerar QR Code
         function generateQRCode() {
             const url = elements.urlInput.value.trim();
             
@@ -58,7 +51,6 @@
             hideMessage(elements.successMsg);
             elements.actionButtons.classList.add('hidden');
             
-            // Validar URL
             if (!url) {
                 showError('Por favor, digite uma URL');
                 return;
@@ -73,7 +65,6 @@
             elements.qrcode.innerHTML = '<div class="loader"></div>';
             elements.qrcode.classList.remove('hidden');
             
-            // Gerar QR Code usando a biblioteca qrcodejs
             try {
                 // Limpar QR Code anterior
                 elements.qrcode.innerHTML = '';
@@ -105,7 +96,6 @@
             }
         }
 
-        // Função para baixar QR Code
         function downloadQRCode() {
             if (!qrCodeDataURL) {
                 showError('Gere um QR Code primeiro!');
@@ -124,7 +114,6 @@
             showSuccess('QR Code baixado com sucesso!');
         }
 
-        // Função para compartilhar QR Code
         function shareQRCode() {
             if (!qrCodeDataURL) {
                 showError('Gere um QR Code primeiro!');

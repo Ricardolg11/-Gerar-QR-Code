@@ -43,4 +43,3 @@ Um gerador de QR Code moderno e responsivo, desenvolvido com HTML5, CSS3 e JavaS
 Contribuições são sempre bem-vindas! Sinta-se à vontade para:
 - Reportar bugs
 - Sugerir novas funcionalidades
-- Enviar pull requests
